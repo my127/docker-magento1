@@ -27,14 +27,16 @@ RUN apk --update add \
     make \
     openssl-dev \
   # php extensions \
-    && docker-php-ext-install bcmath \
-    && docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-png-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && docker-php-ext-install gd \
-    && docker-php-ext-install intl \
-    && docker-php-ext-install opcache \
-    && docker-php-ext-install pdo_mysql \
-    && docker-php-ext-install soap \
-    && docker-php-ext-install xsl \
-    && docker-php-ext-install zip \
+    && docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-png-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install \
+      bcmath \
+      gd \
+      intl \
+      opcache \
+      pdo_mysql \
+      soap \
+      xsl \
+      zip \
     && printf "\n" | pecl install mcrypt-1.0.2 && docker-php-ext-enable mcrypt \
     && printf "\n" | pecl install memcached && docker-php-ext-enable memcached \
     && printf "\n" | pecl install xdebug && docker-php-ext-enable xdebug \
