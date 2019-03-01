@@ -8,6 +8,7 @@ RUN apk --update add \
     iproute2 \
     libjpeg-turbo \
     libmcrypt \
+    libmemcached \
     libpng libxml2 \
     libxslt \
     shadow \
@@ -19,6 +20,7 @@ RUN apk --update add \
     icu-dev \
     libjpeg-turbo-dev \
     libmcrypt-dev \
+    libmemcached-dev \
     libpng-dev \
     libxml2-dev \
     libxslt-dev \
@@ -34,6 +36,7 @@ RUN apk --update add \
     && docker-php-ext-install soap \
     && docker-php-ext-install xsl \
     && docker-php-ext-install zip \
+    && printf "\n" | pecl install memcached-2.2.0 && docker-php-ext-enable memcached \
     && printf "\n" | pecl install xdebug-2.5.5 && docker-php-ext-enable xdebug \
   # clean \
     && apk del \
