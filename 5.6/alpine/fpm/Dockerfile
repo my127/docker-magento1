@@ -8,6 +8,7 @@ RUN apk --update add \
     iproute2 \
     libjpeg-turbo \
     libmcrypt \
+    libmemcached \
     libpng libxml2 \
     libxslt \
     shadow \
@@ -19,6 +20,7 @@ RUN apk --update add \
     icu-dev \
     libjpeg-turbo-dev \
     libmcrypt-dev \
+    libmemcached-dev \
     libpng-dev \
     libxml2-dev \
     libxslt-dev \
@@ -26,7 +28,8 @@ RUN apk --update add \
     openssl-dev \
   # php extensions \
     && docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-png-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install bcmath \
+    && docker-php-ext-install \
+      bcmath \
       gd \
       intl \
       mcrypt \
@@ -35,10 +38,11 @@ RUN apk --update add \
       soap \
       xsl \
       zip \
+    && printf "\n" | pecl install memcached-2.2.0 && docker-php-ext-enable memcached \
     && printf "\n" | pecl install xdebug-2.5.5 && docker-php-ext-enable xdebug \
   # clean \
     && apk del \
-    autoconf g++ make freetype-dev libjpeg-turbo-dev libpng-dev openssl-dev libxml2-dev libmcrypt-dev libxslt-dev icu-dev \
+    autoconf g++ make freetype-dev libjpeg-turbo-dev libpng-dev openssl-dev libxml2-dev libmcrypt-dev libxslt-dev icu-dev libmemcached-dev \
     && rm -rf /var/cache/apk/*
 
 WORKDIR /app
