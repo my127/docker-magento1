@@ -12,6 +12,7 @@ RUN echo 'APT::Install-Recommends 0;' >> /etc/apt/apt.conf.d/01norecommends \
     libjpeg62-turbo \
     libmcrypt4 \
     libmemcached11 \
+    libmemcachedutil2 \
     libpng16-16 \
     libxml2 \
     libxslt1.1 \
