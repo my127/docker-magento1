@@ -2,4 +2,4 @@ language: bash
 services:
   - docker
 script:
-  - bash ./build.sh
+  - docker-compose build

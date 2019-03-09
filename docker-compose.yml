@@ -18,19 +18,19 @@ services:
 
   # PHP 5.6
 
-  php56-fpm-alpine-base:
-    build:
-      context: ./5.6/alpine/fpm
-      dockerfile: base.Dockerfile
-    image: my127/magento1:5.6-fpm-alpine
+  # php56-fpm-alpine-base:
+  #   build:
+  #     context: ./5.6/alpine/fpm
+  #     dockerfile: base.Dockerfile
+  #   image: my127/magento1:5.6-fpm-alpine
 
-  php56-fpm-alpine-console:
-    build:
-      context: ./5.6/alpine/fpm
-      dockerfile: console.Dockerfile
-    image: my127/magento1-console:5.6-fpm-alpine
-    depends_on:
-      - php56-fpm-alpine-base
+  # php56-fpm-alpine-console:
+  #   build:
+  #     context: ./5.6/alpine/fpm
+  #     dockerfile: console.Dockerfile
+  #   image: my127/magento1-console:5.6-fpm-alpine
+  #   depends_on:
+  #     - php56-fpm-alpine-base
 
   php56-fpm-stretch-base:
     build:
@@ -48,19 +48,19 @@ services:
 
   # PHP 7.1
 
-  php71-fpm-alpine-base:
-    build:
-      context: ./7.1/alpine/fpm
-      dockerfile: base.Dockerfile
-    image: my127/magento1:7.1-fpm-alpine
+  # php71-fpm-alpine-base:
+  #   build:
+  #     context: ./7.1/alpine/fpm
+  #     dockerfile: base.Dockerfile
+  #   image: my127/magento1:7.1-fpm-alpine
 
-  php71-fpm-alpine-console:
-    build:
-      context: ./7.1/alpine/fpm
-      dockerfile: console.Dockerfile
-    image: my127/magento1-console:7.1-fpm-alpine
-    depends_on:
-      - php71-fpm-alpine-base
+  # php71-fpm-alpine-console:
+  #   build:
+  #     context: ./7.1/alpine/fpm
+  #     dockerfile: console.Dockerfile
+  #   image: my127/magento1-console:7.1-fpm-alpine
+  #   depends_on:
+  #     - php71-fpm-alpine-base
 
   php71-fpm-stretch-base:
     build:
@@ -78,19 +78,19 @@ services:
 
   # PHP 7.2
 
-  php72-fpm-alpine-base:
-    build:
-      context: ./7.2/alpine/fpm
-      dockerfile: base.Dockerfile
-    image: my127/magento1:7.2-fpm-alpine
+  # php72-fpm-alpine-base:
+  #   build:
+  #     context: ./7.2/alpine/fpm
+  #     dockerfile: base.Dockerfile
+  #   image: my127/magento1:7.2-fpm-alpine
 
-  php72-fpm-alpine-console:
-    build:
-      context: ./7.2/alpine/fpm
-      dockerfile: console.Dockerfile
-    image: my127/magento1-console:7.2-fpm-alpine
-    depends_on:
-      - php72-fpm-alpine-base
+  # php72-fpm-alpine-console:
+  #   build:
+  #     context: ./7.2/alpine/fpm
+  #     dockerfile: console.Dockerfile
+  #   image: my127/magento1-console:7.2-fpm-alpine
+  #   depends_on:
+  #     - php72-fpm-alpine-base
 
   php72-fpm-stretch-base:
     build:
