@@ -1,21 +1,6 @@
 version: '3'
 services:
 
-  # Official
-
-  php56-fpm-alpine-official:
-    image: php:5.6-fpm-alpine
-  php56-fpm-stretch-official:
-    image: php:5.6-fpm-stretch
-  php71-fpm-alpine-official:
-    image: php:7.1-fpm-alpine
-  php71-fpm-stretch-official:
-    image: php:7.1-fpm-stretch
-  php72-fpm-alpine-official:
-    image: php:7.2-fpm-alpine
-  php72-fpm-stretch-official:
-    image: php:7.2-fpm-stretch
-
   # PHP 5.6
 
   # php56-fpm-alpine-base:
