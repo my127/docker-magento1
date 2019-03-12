@@ -16,6 +16,7 @@ RUN apk --update add \
     gcc \
     make \
     nasm \
+    zip \
     zlib-dev \
     linux-headers \
   # clean \
